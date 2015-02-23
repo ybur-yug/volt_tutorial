@@ -140,4 +140,32 @@ functionality going on top of these simple users we can already have sign up and
 in.
 
 ## Getting Started With Models
-Coming soon...
+We want to have a way to simply submit a link to our page. This encompasses a few tasks:
+First, we will need to make the model. We will also need to establish its applicable 
+behaviours somewhere, and then proceed to also have a page to view all these link
+models. So, lets start by exploring in the console a bit. 
+
+`volt console`
+
+Now, we have our default console. If we check what's up, we will see we are accessing
+`Volt::Page`. If we call `page.attributes' we can see we get a hash back that is something
+like `{:name-><Volt::Model::some_id nil>}`. So by default, we are manipulating a page.
+If modifying a page is where we start to work by default, if we want to add a page for
+links, we best get it in our routes. So lets open that up.
+
+`editor app/main/config/routes.rb`
+
+We want to specify a route to GET for our application. So, we shall now add
+```
+get "/todos/{{_index}}", _action: 'todos'
+get "/todos", _action: 'todos'
+```
+
+This will let us get our todos at the current `_index` as well as have a general
+route for them. 
+
+Now what controls the route? Well, a controller sounds like a good place to start.
+
+## Controllers and Simple Logic
+WIP...
+
