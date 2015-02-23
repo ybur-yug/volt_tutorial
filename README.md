@@ -148,7 +148,7 @@ models. So, lets start by exploring in the console a bit.
 `volt console`
 
 Now, we have our default console. If we check what's up, we will see we are accessing
-`Volt::Page`. If we call `page.attributes' we can see we get a hash back that is something
+`Volt::Page`. If we call `page.attributes` we can see we get a hash back that is something
 like `{:name-><Volt::Model::some_id nil>}`. So by default, we are manipulating a page.
 If modifying a page is where we start to work by default, if we want to add a page for
 links, we best get it in our routes. So lets open that up.
