@@ -119,4 +119,17 @@ git commit -m 'initial commit'
 ```
 
 Note that we have only added the README. Everything else is still not staged or indexed at
-all. Their creation has been noticed, but not noted.
+all. Their creation has been noticed, but not noted. However, since we have moved
+our secret out and we know the base application is functional we may now add all 
+the directories and files included by default.
+
+`git add app  config  config.ru Gemfile lib  README.md  spec`
+
+`git commit -m 'initial working build'`
+
+Now, lets dive in deeper and take a look at how we can start adding some models and get
+functionality going on top of these simple users we can already have sign up and log
+in.
+
+## Getting Started With Models
+Coming soon...
