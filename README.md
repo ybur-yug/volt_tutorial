@@ -28,6 +28,10 @@ we will want to work with the latest stable version of Ruby. In this case, it is
 
 `rbenv install 2.2.0`
 
+We also will need bundler to manage our gems:
+
+`gem install bundler`
+
 ## On to the Volt Train
 This will take a moment, but when complete we can now move on and install Volt.
 
@@ -40,10 +44,10 @@ Now, we have Ruby, and a web application development framework. Lets get things 
 I have decided on Veddit for my app name. You may pick something equally trivial and senseless,
 or spend hours trying to name it. Your call.
 
-NOTE: from here on `veddit` will be substituted with `app_name
+NOTE: from here on `veddit` will be substituted with `appname`
 
 ```
-cd app_name
+cd appname
 ls
 #=> app  config  config.ru Gemfile  Gemfile.lock  lib  README.md  spec`
 ```
@@ -110,7 +114,11 @@ with
 
 `config.app_secret = ENV['APPNAME_SECRET']`
 
-Now, we should initialie a git repository and make our initial commit
+and once we source it, we have securely removed it from the codebase:
+
+`source .your_var_fn`, and we are golden.
+
+Now, we should initialie a git repository and make our initial commit.
 
 ```
 git init
