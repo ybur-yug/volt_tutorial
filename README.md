@@ -3,8 +3,7 @@
 ## Introduction
 Hi. You're a developer, or someone interested in writing some code. A web app even! This is fun. Awesome.
 We're going to learn about Volt today. Volt is a web framework that allows us to write applications in which
-the client and server are perfectly synced at all times. Reactivity! Woo! It is also powered by Opal [add link]
-so that all of our code can be in Ruby, client and server both!
+the client and server are perfectly synced at all times. Reactivity! Woo! It is also powered by Opal [add link] so that all of our code can be in Ruby, client and server both!
 
 ## Why Volt?
 I love Meteor.js. I also am not the biggest fan of JavaScript as a whole. Thus, Volt seemed to be a great avenue
@@ -139,7 +138,7 @@ Now, lets dive in deeper and take a look at how we can start adding some models 
 functionality going on top of these simple users we can already have sign up and log
 in.
 
-## Getting Started With Models
+## Getting Started
 We want to have a way to simply submit a link to our page. This encompasses a few tasks:
 First, we will need to make the model. We will also need to establish its applicable 
 behaviours somewhere, and then proceed to also have a page to view all these link
@@ -167,5 +166,6 @@ route for them.
 Now what controls the route? Well, a controller sounds like a good place to start.
 
 ## Controllers and Simple Logic
-WIP...
-
+## Adding A Model
+## Validations
+## [optional/maybe] adding a chat client
