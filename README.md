@@ -139,20 +139,47 @@ Now, lets dive in deeper and take a look at how we can start adding some models 
 functionality going on top of these simple users we can already have sign up and log
 in.
 
-## An Aside: The Intention of Volt
+## An Aside: More In Depth Exploration of Volt
+### Note: This is a rough retelling of [@ryanstout](link)'s talk at Rubyconf.
+
 Web Development has hit a trend that has shown it's head in the past.This pattern, like
 many others, is a possible indication that history oft repeats itself. Back in the early
-Rails days, we basically just rendered HTML. We accomplished this using an MVC model. If
-You are new to webdev and have not heard that term, consult [link](link). Skipping a LOT
-of steps, we are now at a point where the clientside application is nearly a mimicry of
-the serverside application, in structure. It is a full MVC framework design, that requires
-a large amount of repetition, be it simply in another language (JavaScript, over Ruby). 
-I see a fundamental problem here: people new to web development see this and think it is
-crazy. 
+Rails days, we basically just rendered HTML. This previously was done by a large amount
+of patch work, and led to a bunch of bad patterns and things glued together. Rails took
+the previous ten years of doing this and found an abstraction for it. It did this 
+using an MVC model. 
 
-So, much like a drunkard realizing they may in fact be making their own life much more
-difficult and getting sober, I had an epiphany when I discovered Volt. The currently coined
-term for this architecture is 'Isomorphic'. In math, we define it as:
+Moving into the years ahead, Gmail came around, and AJAX became a buzzwork. Asynchronous
+JavaScript essentially boiled down to, "Hey, lets get some new data without doing an 
+entirely new get request.". Rails standardized on REST and JSON, and skip to 2009 and
+we've a new problem. We are sending so much JS and CSS to the client that Rails needed
+to introduce the asset pipeline. Now, a bit more time elapses and there is full clientside
+MVC with tools like Bower to manage all of them. The number of tools in this stack has
+spread like wildfire due to a variety of factors.
+
+Lets take a look at the elements of complexity in the server and clientside that are now
+part of the standard Rails/Ember or Rails/Backbone, etc. stack:
+
+|client              |server
+|---                 |---
+|asset leading       | asset packing
+|routes/auth         | routes/auth
+|models              | models
+|controllers         | controllers
+|views               | views
+|AJAX                | REST
+
+[The Pragmatic Programmer](link) said
+
+```
+DRY—Don’t Repeat Yourself
+Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
+```
+
+It would appear as if we are disappointing sensei, with this design pattern. But what
+is the core issue here, what is the real issue? Theoretically, this could be as
+'simple' as a massive refactoring. Work utilizing abstraction to couple. This, however,
+would be insane. There is a word in mathematics, isomorphism
 
 ```
 i·so·mor·phic
@@ -160,14 +187,92 @@ adjective: isomorphic; adjective: isomorphous
     corresponding or similar in form and relations.
 ```
 
-Similar in form and relation. If we contemplate the actual structure of a typical Rails/Ember
-or Rails/Angular app, we see this. There is a very clear replication. I have a Post model in
-my REST API, and I've a Post model in my frontend JS. So why do this?
+It would seem that our client and server could potentially be developed for isomorphically.
+This is currently the term Volt uses for this style of design -- shared code between client
+and server. 
 
-Well, we don't have to with Volt. The motivation here is to resume sanity in the development
-of web applications, and reduce the complexity. All the while adding some great flexibility,
-a component based architecture, reactive data, and rich bindings. All in Ruby. And it may sound
-too good to be true but it's not. So let us forge forward
+People who are new to web development that encounter these patterns often see this and
+feel like it is crazy. What is the solution?
+
+Well, we hope it is isomorphic development with Volt.
+
+Now instead of REST and JSON, communicating over all these API's we can simply have the
+code be shared between client and server. And also, with the use of websockets, we can
+update everything and have it live sync across multiple clients. Reactivity batman!
+
+How is the frontend JavaScript removed? [Opal](link). Volt gives us a bunch of toys
+we normally are given in a frontend framework that lets us build fast and quick.
+You get automatic simple bindings inside the frontend, automatic bindings, syncing
+with the database, or all clients. 
+
+Volt also builds all apps as nested components. Rather than allowing a monolithic application
+to build itself up, as many Rails/JS projects tend to, Volt instead tries to keep things
+inside reuseable chunks that are easily managed and picked and chosen.
+
+A trend of recent years has seemingly been 'compile to JavaScript'. Why did this come up?
+What is it about the language that it is so hard to build in that programmers continuously
+are building layers of abstraction to escape it?
+
+Douglas Crockford, author of 'JavaScript: The Good Parts' recently said in a talk:
+
+- Don't use `new`
+- Don't use `Object.create`
+- Don't use `this`
+- Don't use `null`
+- Dont use falsiness
+- 
+It would appear that this completely removes the object-oriented and prototypal design
+patterns of the language, in favor of writing purely functionally. It would appear
+that if you are leaving the largest patterns of design that are core to the language's
+unique features, that something may be able to do better. I have written JavaScript for
+years, and it is a language I loved in the beginning but as I grew as a developer I
+fell further and further into the backend.
+
+Opal has gained a large foothold, and development is going well. Many think that compiling
+to JavaScript will be incredibly complex and difficult, but it works quite reliably. This
+reliability is akin to a C developer not needing to know what specific memory register 
+something is on for a large-scale task. Opal also adds little overhead as far as filesize.
+
+Debugging in Opal actually is quite nice. While many other languages compile to bytecode
+and use a VM, it transpiles the concepts and maps them 1:1. This is valid, transpilable
+Opal:
+
+```
+class Foo
+  def initialize(name)
+    @name = name
+  end
+  
+  def welcome
+    "hi #{name}"
+  end
+end
+```
+
+The source maps also give you stack traces directly back to Ruby, rather than JavaScript.
+No more worrying about `undefined is not a function`. They are also quite brief. IRB is
+also able to be ran in the browser with IRB. Opal is also tested with RubySpec, so one
+knows its a faithful implementation. Opal and MRI will have the same error 99% of the
+time. Opal does have a small overhead, but it is not a ton of it and the gains are huge.
+
+Opal does lack math abilities due to its customized use of operators. However, at anytime
+with a backtick (\`) lets you inline vanilla JS.
+
+On top of Opal for the frontend, volt also gives you Collections. They are:
+- Page
+- Params
+- Store
+- Local Store
+- Cookies
+
+Page is temporary memory
+Store is the DB/other user sync
+Params is the URL parameters
+Local store and cookies are less important to consider right now.The normal MVC
+paradigm is not how Volt handles its design patterns. Volt follows what is popularly
+referred to as the MVVM pattern. 
+
+
 
 ## Getting Started
 We want to have a way to simply submit a link to our page. This encompasses a few tasks:
