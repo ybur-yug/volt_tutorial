@@ -43,10 +43,11 @@ DRY—Don’t Repeat Yourself
 Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
 ```
 
-It would appear as if we are disappointing sensei, with this design pattern. But what
-is the core issue here, what is the real issue? Theoretically, this could be as
-'simple' as a massive refactoring. Work utilizing abstraction to couple. This, however,
-would be insane. There is a word in mathematics, isomorphism
+It would appear as if we are disappointing sensei with this design pattern. But what
+is the core issue here? Theoretically, this could be as 'simple' as a massive refactoring. 
+Work utilizing abstraction to couple. This, however,would be insane. 
+
+There is a word in mathematics, isomorphic
 
 ```
 i·so·mor·phic
@@ -56,7 +57,7 @@ adjective: isomorphic; adjective: isomorphous
 
 It would seem that our client and server could potentially be developed for isomorphically.
 This is currently the term Volt uses for this style of design -- shared code between client
-and server. 
+and server. Rather than the replication we currently are forcing ourselves into.
 
 People who are new to web development that encounter these patterns often see this and
 feel like it is crazy. What is the solution?
@@ -167,19 +168,17 @@ for. So let's dig in.
 
 ## Getting Started
 I will treat this tutorial as a system for someone with 0 configuration coming in. So we will cover 'basic' things
-such as managing Ruby versions with rbenv, setting up and using bundler, and generally configuring an environment
-for Ruby development.
+such as managing Ruby versions, using bundler, and generally configuring an environment for development.
 
 ## Lets Get Ruby
 First step to making a Ruby app is to install Ruby. I will primarily cover Linux and OSX options here, but
 for Windows users, just ensure you install Ruby 2.2.0. We will worry about Ruby versions for that platform
 later. For managing Ruby on Linux and OSX, I prefer [rbenv](link).
 
-To install it, directions are easily followed here:
-https://github.com/sstephenson/rbenv#installation
+To install it, directions are easily followed [here](https://github.com/sstephenson/rbenv#installation).
 
-No point in rewriting the tutorial when it is perfectly precise and tested. So, once rbenv is configured
-we will want to work with the latest stable version of Ruby. In this case, it is 2.2.0. To get it,
+Once rbenv is configured we will want to work with the latest stable version of Ruby. In this case, 
+it is 2.2.0. To get it,
 
 `rbenv install 2.2.0`
 
@@ -194,12 +193,12 @@ This will take a moment, but when complete we can now move on and install Volt.
 
 Now, we have Ruby, and a web application development framework. Lets get things rolling.
 
-`volt new veddit`
+`volt new baller_app`
 
-I have decided on Veddit for my app name. You may pick something equally trivial and senseless,
+I have decided on Baller App for my app name. You may pick something equally trivial and senseless,
 or spend hours trying to name it. Your call.
 
-NOTE: from here on `veddit` will be substituted with `appname`
+#### NOTE: from here on `baller_app` will be substituted with `appname`
 
 ```
 cd appname
@@ -229,6 +228,7 @@ volt precompile                 # precompile all application assets
 volt runner FILEPATH            # Runs a ruby file at FILEPATH in the volt app
 volt server                     # run the server on the project in the current directory
 ```
+
 So it seems we have a console, an generators, a server, and some things that look like they
 are a little more in depth. Running the server will let us check out the boilerplate app.
 Let's bundle up our gems and fire this bad thang up.
@@ -255,13 +255,15 @@ There are also compression, server, and database options. But we need not worry 
 right now. For the moment, lets just do a simple security move and move this generated secret
 from the file here, to a configured environment variable. This way the secret is never leaving
 the server, and will also be absent from the repository's code. If you are a *nix user, env
-vars should not be a foreign concept. Personally, I keep project specific dotfiles for these 
-named in the style `.appname_vars`. So, `editor .your_var_fn` and lets set it. Delete the
+vars should not be a foreign concept. 
+
+Personally, I keep project specific dotfiles for these 
+named in the style `.appname_vars`. So, `editor .appname_vars` and lets set it. Delete the
 string from `app.rb` and paste it in as:
 
 `export APPNAME_SECRET='whatever_the_generated_string_was'`
 
-Now, in `app.rb` we are able to replace 
+Write that and open `app.rb` and we are able to replace 
 
 `config.app_secret = 'whatever_it_generated'`
 
@@ -271,9 +273,9 @@ with
 
 and once we source it, we have securely removed it from the codebase:
 
-`source .your_var_fn`, and we are golden.
+`source .appname_vars`, and we are golden.
 
-Now, we should initialie a git repository and make our initial commit.
+Now, we should initialize a git repository and make our initial commit.
 
 ```
 git init
@@ -306,19 +308,16 @@ models. So, lets start by exploring in the console a bit.
 Now, we have our default console. If we check what's up, we will see we are accessing
 `Volt::Page`. If we call `page.attributes` we can see we get a hash back that is something
 like `{:name-><Volt::Model::some_id nil>}`. So by default, we are manipulating a page.
-If modifying a page is where we start to work by default, if we want to add a page for
-links, we best get it in our routes. So lets open that up.
+If modifying a page is where we start to work by default, if we want to add a page our app,
+we best get it in our routes. So lets open that up.
 
 `editor app/main/config/routes.rb`
 
 We want to specify a route to GET for our application. So, we shall now add
+
 ```
-get "/todos/{{_index}}", _action: 'todos'
 get "/todos", _action: 'todos'
 ```
-
-This will let us get our todos at the current `_index` as well as have a general
-route for them. 
 
 Now what after the route? Well, a view sounds like a good place to start.
 
