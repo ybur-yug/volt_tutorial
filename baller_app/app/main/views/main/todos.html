@@ -1,0 +1,19 @@
+<:Title>
+  Todos
+<:Body>
+  <h1>Todos</h1>
+
+  <form e-submit="add_todo" role="form">
+    <div class='form-group'>
+      <label>Todo</label>
+      <input class="form-control" type="text" value="{{ page._new_todo }}">
+    </div>
+  </form>
+
+  <table class="todo-table">
+    {{ page._todos.each do |todo| }}
+      <tr>
+        <td>{{ todo._name }}</td>
+      </tr>
+    {{ end }}
+  </table>
