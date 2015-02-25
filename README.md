@@ -7,8 +7,8 @@ We're going to learn about Volt today. Volt is a web framework that allows us to
 the client and server are perfectly synced at all times. Reactivity! Woo! It is also powered by [Opal](link) so that all of our code can be in Ruby, client and server both!
 
 ## Sections (complete)
-- [part 1](part_1.md)
-- [part 2](part_2.md)
+- [Why Volt?](part_1.md)
+- [Your First App](part_2.md)
 
 Coming up:
 ## More Bindings
