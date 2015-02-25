@@ -378,6 +378,68 @@ our page:
 `line 13`
 
 ## Persisting Todos
+Now, for a true to do list we need to be able to remove it as well.
+
+```RUBY
+def remove_todo(todo)
+  page._todos.delete(todo)
+end
+```
+`line 16`
+
+and we need a button to complete them, so back to `app/main/views/main/todos.html`
+
+```HTML
+...
+<tr>
+  <td><input type="checkbox" checked="{{ todo._completed }}" /></td>
+  <td class= "{{ if todo._completed }}complete{{ end }}>{{ todo._name }}</td>
+  <td><button e-click="remove_todo(todo)">X</button></td>
+</tr>
+...
+```
+`line 18, inside the each loop`
+
+and lastly some CSS to help display things:
+
+```CSS
+textarea {
+  height: 140px;
+  width: 100%;
+}
+
+.todo-table {
+  width: auto;
+
+  tr {
+    &.selected td {
+    background-color: #428bca;
+    color: #FFFFFF;
+
+    button {
+    color: #000000;
+    }
+  }
+
+  td {
+    padding: 5px;
+    border-top: 1px solid #EEEEEE;
+
+    &.complete {
+      text-decoration: line-through;
+      color: #CCCCCC;
+      }
+    }
+  }
+}
+```
+`app/main/assets/css/app.css.scss`
+
+Now if we go to our page, we will be pleased to see the ability to check
+and remove lists is working perfectly. However, we have more work to do for
+a completely functional list. 
+#### to be continued...
+
 ## More Bindings
 ## Validations
 ## Adding Volt Components
