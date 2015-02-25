@@ -288,4 +288,6 @@ Now, lets dive in deeper and take a look at how we can start adding some models 
 functionality going on top of these simple users we can already have sign up and log
 in.
 
+[Getting Started](/part_2.md)
+
 
