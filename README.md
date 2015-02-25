@@ -377,10 +377,12 @@ our page:
 ```
 `line 13`
 
-## Building A Simple View
-## Adding Controller Bindings
-## Adding Controller Logic
-## Beyond Todos: Bookmarking
+## Persisting Todos
+## More Bindings
 ## Validations
+## Adding Volt Components
+## Restructuring the Application
+## Adding Link Submission
+## Allowing Comments
 ## Model Relations
-## Adding Tasks
+## Permissions (once perms API released)
