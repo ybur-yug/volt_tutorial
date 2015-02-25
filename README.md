@@ -220,7 +220,7 @@ Douglas Crockford, author of 'JavaScript: The Good Parts' recently said in a tal
 - Don't use `this`
 - Don't use `null`
 - Dont use falsiness
-- 
+
 It would appear that this completely removes the object-oriented and prototypal design
 patterns of the language, in favor of writing purely functionally. It would appear
 that if you are leaving the largest patterns of design that are core to the language's
@@ -270,9 +270,33 @@ Store is the DB/other user sync
 Params is the URL parameters
 Local store and cookies are less important to consider right now.The normal MVC
 paradigm is not how Volt handles its design patterns. Volt follows what is popularly
-referred to as the MVVM pattern. 
+referred to as the MVVM pattern. This breaks down into three core concepts:
 
+The model, which is as one may expect a simple object representing something in our application.
+The view, which is the view and instances of data rendered to the client.
+The view-model, which is functionally a controller of sorts. But it starts with a view, and any
+time a binding hits a method is called to the controller and it can respond.
 
+At any point if the data changes, frontend or back, the method will be called again and the data
+will be persisted.
+
+Volt also does automatic code push, so any save results in an automatic reload of the server while
+developing. The component-centric system also allows for `Tags` to be carried into the new code
+utilizing the other components functionalities. A simple example of this would be this:
+Lets say we have a simple to do list.If we create a buffer to hold data in the interim before we
+update a model, we now can change how we save. We declaratively state the save, and if it passes
+we can push the success. Now, if we add a component to the list, `volt-fields`, we can add in
+its functionality in the todo list's submission via `volt-fields`'s tag, and now we get free
+validations with success/error feedback in real time just by binding this tag and having it
+set through the model using a buffer.
+
+Tasks are another wonderful piece of Volt. It allows you to call serverside code in an RPC fashion
+so that a promise is returned sharing error/success messages and data returned. This allows
+asynchronous work very simple.
+
+By having one language, one router, central state, component extension, and automatic
+reactivity, Volt provides something in a simple package that is hard to find a real competitor
+for. So let's dig in.
 
 ## Getting Started
 We want to have a way to simply submit a link to our page. This encompasses a few tasks:
