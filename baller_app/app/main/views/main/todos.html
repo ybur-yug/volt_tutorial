@@ -15,5 +15,10 @@
       <tr>
         <td>{{ todo._name }}</td>
       </tr>
+      <tr>
+        <td><input type="checkbox" checked="{{ todo._completed }}" /></td>
+        <td class= "{{ if todo._completed }}complete{{ end }}">{{ todo._name }}</td>
+        <td><button e-click="remove_todo(todo)">X</button></td>
+      </tr>
     {{ end }}
   </table>
