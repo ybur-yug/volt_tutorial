@@ -11,11 +11,11 @@ the client and server are perfectly synced at all times. Reactivity! Woo! It is 
 - [Your First App](part_2.md)
 
 Coming up:
-## More Bindings
-## Validations
-## Adding Volt Components
-## Restructuring the Application
-## Adding Link Submission
-## Allowing Comments
-## Model Relations
-## Permissions (once perms API released)
+- More Bindings
+- Validations
+- Adding Volt Components
+- Restructuring the Application
+- Adding Link Submission
+- Allowing Comments
+- Model Relations
+- Permissions (once perms API released)
