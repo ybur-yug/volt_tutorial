@@ -1,4 +1,3 @@
-
 ## Your First App
 Volt applications are built with nested components. Out of the box you get one component
 named main, and can easily include and package others. 

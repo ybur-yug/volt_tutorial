@@ -9,6 +9,7 @@ the client and server are perfectly synced at all times. Reactivity! Woo! It is 
 ## Sections (complete)
 - [Why Volt?](part_1.md)
 - [Getting Started](part_2.md)
+- [Aside 1: Frontend Ruby Play](aside_1.md)
 - [Your First App](part_3.md)
 
 Coming up:
