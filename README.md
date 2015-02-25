@@ -163,9 +163,12 @@ get "/todos", _action: 'todos'
 This will let us get our todos at the current `_index` as well as have a general
 route for them. 
 
-Now what controls the route? Well, a controller sounds like a good place to start.
+Now what after the route? Well, a view sounds like a good place to start.
 
-## Controllers and Simple Logic
-## Adding A Model
+## Building A Simple View
+## Adding Controller Bindings
+## Adding Controller Logic
+## Beyond Todos: Bookmarking
 ## Validations
-## [optional/maybe] adding a chat client
+## Model Relations
+## Adding Tasks
