@@ -154,9 +154,11 @@ So, much like a drunkard realizing they may in fact be making their own life muc
 difficult and getting sober, I had an epiphany when I discovered Volt. The currently coined
 term for this architecture is 'Isomorphic'. In math, we define it as:
 
+```
 i·so·mor·phic
 adjective: isomorphic; adjective: isomorphous
     corresponding or similar in form and relations.
+```
 
 Similar in form and relation. If we contemplate the actual structure of a typical Rails/Ember
 or Rails/Angular app, we see this. There is a very clear replication. I have a Post model in
