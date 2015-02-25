@@ -8,7 +8,8 @@ the client and server are perfectly synced at all times. Reactivity! Woo! It is 
 
 ## Sections (complete)
 - [Why Volt?](part_1.md)
-- [Your First App](part_2.md)
+- [Getting Started](part_2.md)
+- [Your First App](part_3.md)
 
 Coming up:
 - More Bindings
