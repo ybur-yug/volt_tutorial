@@ -138,6 +138,34 @@ Now, lets dive in deeper and take a look at how we can start adding some models 
 functionality going on top of these simple users we can already have sign up and log
 in.
 
+## An Aside: The Intention of Volt
+Web Development has hit a trend that has shown it's head in the past.This pattern, like
+many others, is a possible indication that history oft repeats itself. Back in the early
+Rails days, we basically just rendered HTML. We accomplished this using an MVC model. If
+You are new to webdev and have not heard that term, consult [link](link). Skipping a LOT
+of steps, we are now at a point where the clientside application is nearly a mimicry of
+the serverside application, in structure. It is a full MVC framework design, that requires
+a large amount of repetition, be it simply in another language (JavaScript, over Ruby). 
+I see a fundamental problem here: people new to web development see this and think it is
+crazy. 
+
+So, much like a drunkard realizing they may in fact be making their own life much more
+difficult and getting sober, I had an epiphany when I discovered Volt. The currently coined
+term for this architecture is 'Isomorphic'. In math, we define it as:
+
+i·so·mor·phic
+adjective: isomorphic; adjective: isomorphous
+    corresponding or similar in form and relations.
+
+Similar in form and relation. If we contemplate the actual structure of a typical Rails/Ember
+or Rails/Angular app, we see this. There is a very clear replication. I have a Post model in
+my REST API, and I've a Post model in my frontend JS. So why do this?
+
+Well, we don't have to with Volt. The motivation here is to resume sanity in the development
+of web applications, and reduce the complexity. All the while adding some great flexibility,
+a component based architecture, reactive data, and rich bindings. All in Ruby. And it may sound
+too good to be true but it's not. So let us forge forward
+
 ## Getting Started
 We want to have a way to simply submit a link to our page. This encompasses a few tasks:
 First, we will need to make the model. We will also need to establish its applicable 
