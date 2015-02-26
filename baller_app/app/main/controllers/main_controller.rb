@@ -7,21 +7,10 @@ class MainController < Volt::ModelController
   def about
   end
 
-  def add_todo
-    _todos << { name: page._new_todo }
-    page._new_todo = 'todo'
-  end
-
-  def remove_todo(todo)
-    _todos.delete(todo)
-  end
-
   def add_link
     _links << { description: page._new_description,
                 url: page._new_url }
-    page._new_link = { url: 'url', description: 'description' }
-    flash._notices << "Success"
-    go '/'
+    go '/links'
   end
 
   private
@@ -37,9 +26,5 @@ class MainController < Volt::ModelController
   # at the first part of the url against the href attribute.
   def active_tab?
     url.path.split('/')[1] == attrs.href.split('/')[1]
-  end
-
-  def clean_io(content, vals)
-    content.map { |item| content[item] = item }
   end
 end

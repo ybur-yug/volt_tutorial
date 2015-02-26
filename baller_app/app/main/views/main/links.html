@@ -1,8 +1,22 @@
 <:Title>
   Links
 <:Body>
-{{ _links.each do |link| }}
-<div class='row'>
-  <a href="{{ link._url }}">{{ link._description }}</a>
-{{ end }}
-</div>
+  <div class='col-md-10'>
+    {{ _links.each do |link| }}
+    <div>
+      <a href="{{ link._url }}">{{ link._description }}</a>
+    {{ end }}
+    </div>
+  </div>
+  <div class='col-md-2'>
+    <form e-submit="add_link" role="form">
+      <div class='form-group'>
+        <label>Url</label>
+        <input class="form-control" type="text" value="{{ page._new_url }}">
+        <label>Description</label>
+        <input class="form-control" type="text" value="{{ page._new_description }}">
+        <input type="Submit" value="Submit" action="{{ _add_link }}">
+      </div>
+    </form>
+    <textarea></textarea>
+  </div>
