@@ -1,0 +1,8 @@
+<:Title>
+  Links
+<:Body>
+{{ _links.each do |link| }}
+<div class='row'>
+  <a href="{{ link._url }}">{{ link._description }}</a>
+{{ end }}
+</div>
