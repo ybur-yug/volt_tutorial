@@ -27,4 +27,6 @@ you now have the full power of Ruby on your frontend.
 Overall this aside is just to help illustrate that we *truly* can write Ruby
 everywhere with Volt. And it sure is nice.
 
-Discard these changes after you are done playing, and move on to [Your First App](/part_3.md)
+Discard these changes after you are done playing, and move on to 
+
+[Your First App](/part_3.md)
