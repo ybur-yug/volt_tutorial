@@ -94,7 +94,7 @@ and we need a button to complete them, so back to `app/main/views/main/todos.htm
 ...
 <tr>
   <td><input type="checkbox" checked="{{ todo._completed }}" /></td>
-  <td class= "{{ if todo._completed }}complete{{ end }}>{{ todo._name }}</td>
+  <td class= "{{ if todo._completed }}complete{{ end }}">{{ todo._name }}</td>
   <td><button e-click="remove_todo(todo)">X</button></td>
 </tr>
 ...
@@ -137,7 +137,31 @@ textarea {
 `app/main/assets/css/app.css.scss`
 
 Now if we go to our page, we will be pleased to see the ability to check
-and remove lists is working perfectly. However, we have more work to do for
-a completely functional list. 
-#### to be continued...
+and remove lists is working perfectly. However, we are not persisting data!
+Once we fix this, we may be able to call this todo app complete. 
 
+`editor app/main/controllers/main_controller.rb`
+
+Directly below the class declaration, we can add:
+
+```
+...
+class MainController < Volt::ModelController
+  model :store
+...
+```
+`line 3`
+
+Now, we can replace all references of page._todos, our current, non-persisted store,
+and move to using MongoDB. If you have not installed Mongo before, you can find
+installation guides [here](link). Once installed, start it as a background process:
+
+`mongod`
+
+From here, we should be automagically moving our todos to mongo. Let's create some
+and try it out. Open several browser windows and start adding/checking/removing todos.
+They will be perfectly up to date every single time!
+
+Now that we've got the basics, lets build something nontrivial.
+
+[Getting Real](/part_4.md)

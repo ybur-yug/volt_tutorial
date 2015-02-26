@@ -11,6 +11,7 @@ the client and server are perfectly synced at all times. Reactivity! Woo! It is 
 - [Getting Started](part_2.md)
 - [Aside 1: Frontend Ruby Play](aside_1.md)
 - [Your First App](part_3.md)
+- [Getting Real](part_4.md)
 
 Coming up:
 - More Bindings
