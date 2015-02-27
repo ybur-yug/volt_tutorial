@@ -12,13 +12,9 @@ the client and server are perfectly synced at all times. Reactivity! Woo! It is 
 - [Aside 1: Frontend Ruby Play](aside_1.md)
 - [Your First App](part_3.md)
 - [Getting Real](part_4.md)
+- [Adding Components](part_5.md)
 
 Coming up:
 - More Bindings
-- Validations
-- Adding Volt Components
-- Restructuring the Application
-- Adding Link Submission
-- Allowing Comments
 - Model Relations
 - Permissions (once perms API released)
