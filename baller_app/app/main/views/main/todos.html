@@ -2,6 +2,7 @@
   Todos
 <:Body>
 <div class='row'>
+
   <div class='col-md-4'>
     <h1>Todos</h1>
     <table class="todo-table">
@@ -23,5 +24,9 @@
       </div>
     </form>
   </div>
+  <div class='col-md-1'>
+  {{ _users.each do |u| }}
+    {{ u._name }}<br>
+  {{ end }}
+  </div>
 </div>
-
