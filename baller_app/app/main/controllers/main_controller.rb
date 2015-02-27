@@ -2,15 +2,20 @@
 class MainController < Volt::ModelController
   model :store
   def index
+    # Add code for when the index view is loaded
   end
 
   def about
+    # Add code for when the about view is loaded
   end
 
-  def add_link
-    _links << { description: page._new_description,
-                url: page._new_url }
-    go '/links'
+  def add_todo
+    _todos << { name: page._new_todo }
+    page._new_todo = ''
+  end
+
+  def remove_todo(todo)
+    _todos.delete(todo)
   end
 
   private
