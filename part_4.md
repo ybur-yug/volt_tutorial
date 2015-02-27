@@ -58,8 +58,34 @@ Volt's source we can gather another tidbit.
 `user.rb, Volt source`
 
 So we also get validations on our login. Checking the emails presence and length. Nice. We also
-find that we can log out a user with `Volt.logout`. It also appears that `volt-fields` is in the 
-mix here. Let's see what this does, and if we can use it with anything we have.
+find that we can log out a user with `Volt.logout`. 
 
-### Using Other Components
-in progress...
+### Extending Capability With Models
+We want to validate some things in our todos. And we can do that easily, but first we need some
+abstraction to carry that through to the clientside. Enter models.
+
+`volt generate model todo`
+
+Now, we have a base model for our todos that is empty. How about to start we verify the description
+is at least 4 characters. We can add
+
+```RUBY
+  validates :description, length: 10
+```
+
+inside the classs and it is as simple as that. We now will not accept a description with less than
+4 characters. Now what if you couldn't see the todos unless you were a logged in user? This would
+keep them private so only users of our app can see them, and share the list. In order to accomplish
+this we add a very simple wrapping to the html of our page. Around the todos block, we can add this
+
+```RUBY
+{{ if Volt.user? }}
+[todo block]
+{{ end }}
+```
+
+Now, only logged in users can see our todos, and they are doing some basic validation. But lets
+get some more robust validation going on the client side. If you noticed, you get live feedback
+in the fields for user sign up, but not with our todo. To add this, we will need to add a 
+dependency, `volt-fields`. This is what we will go into next.
+
