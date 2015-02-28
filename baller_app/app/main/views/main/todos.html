@@ -6,15 +6,17 @@
   <div class='col-md-4'>
     <h1>Todos</h1>
     <table class="todo-table">
-      {{ _todos.each do |todo| }}
-        <tr
-          e-click="params._index = index"
-          class="{{ if params._index.or(0).to_i == 1 }}selected{{ end }}">
-         >
-          <td><input type="checkbox" checked="{{ todo._completed }}" /></td>
-          <td>{{ todo._name }}</td>
-          <td><button e-click="remove_todo(todo)">X</button></td>
-        </tr>
+      {{ if Volt.user? }}
+        {{ _todos.each do |todo| }}
+          <tr
+            e-click="params._index = index"
+            class="{{ if params._index.or(0).to_i == 1 }}selected{{ end }}">
+           >
+            <td><input type="checkbox" checked="{{ todo._completed }}" /></td>
+            <td>{{ todo._name }}</td>
+            <td><button e-click="remove_todo(todo)">X</button></td>
+          </tr>
+        {{ end }}
       {{ end }}
     </table>
     <form e-submit="add_todo" role="form">
