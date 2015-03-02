@@ -1,11 +1,11 @@
 <:Title>
   {{ template main_path, "title", {controller_group: 'main'} }}
-
 <:Body>
   <div class="container">
     <div class="header">
       <ul class="nav nav-pills pull-right">
         <:nav href="/">Home</:nav>
+        <:nav href="/todos">Todo List</:nav>
         <:nav href="/about">About</:nav>
         <:user-templates:menu />
       </ul>
@@ -17,7 +17,7 @@
     {{ template main_path, 'body', {controller_group: 'main'} }}
 
     <div class="footer">
-      <p>&copy; Company 2014</p>
+      <p>&copy; Robert Grayson 2015</p>
     </div>
 
   </div>
