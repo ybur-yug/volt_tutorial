@@ -22,7 +22,7 @@ Now let's add a link to todos in our nav in `/views/main/main.html`, the skeleto
 frontend:
 
 ```HTML
-<:nav href="/todos">Todos</:nav>
+<:nav href="/todos">Todo List</:nav>
 ```
 on `line 10`
 
@@ -31,6 +31,7 @@ frontend, but we need to work on the backend to support this as well. Let us ope
 `app/main/config/routes.rb` and add the line:
 
 `get '/todos', _action: 'todos'`
+`line 8`
 
 This will allow the server to recognize this path. If we check out the current page,
 we can now click our way through to the todo page. Next, we'll need a form to submit
@@ -38,12 +39,14 @@ them from the clientside. open up `app/main/views/main/todos.html` and we can ad
 block below our `h1` tags:
 
 ```HTML
-<form e-submit="add_todo" role="form">
-  <div class='form-group'>
-    <label>Todo</label>
-    <input class="form-control" type="text" value="{{ page._new_todo }}">
-  </div>
-</form>
+    <body>
+      <form e-submit="add_todo" role="form">
+        <div class='form-group'>
+          <label>Todo</label>
+          <input class="form-control" type="text" value="{{ page._new_todo }}">
+        </div>
+      </form>
+    </body>
 ```
 `line 6`
 
@@ -68,15 +71,17 @@ another todo may be added to the list. To see these we will add a table to
 our page:
 
 ```HTML
-<table class="todo-table">G
-  {{ page._todos.each do |todo|
-    <tr>
-      <td>{{ todo._name }}</td>
-    </tr>
-  {{ end }}
-</table>
+        <table class="todo-table">
+          {{ page._todos.each do |todo| }}
+          <tr>
+            <td>{{ todo._name }}</td>
+          </tr>
+          {{ end }}
+        </table>
 ```
 `line 13`
+
+#### [commit hash](http://www.github.com/rhgraysonii/volt_tutorial/commit/hash)
 
 ## Persisting Todos
 Now, for a true to do list we need to be able to remove it as well.
