@@ -97,8 +97,8 @@ shown in the URL. (See routes for more info)
 ```
 
 Okay, awesome. So we can very easily mess with parameters and dont have to worry about query
-strings or anything. Let's start by keeping a current index on which todo is selected in the app.  ``` 
-```
+strings or anything. Let's start by keeping a current index on which todo is selected in the app.  
+
 Now, only logged in users can see our todos, and they are doing some basic validation. But lets
 get some more robust validation going on the client side. If you noticed, you get live feedback
 in the fields for user sign up, but not with our todo. To add this, we will need to add a 
@@ -142,7 +142,7 @@ will automatically show and change in the url as it moves and is altered.
 Next, why not allow ourselves the ability to annotate this todo with a simple note? This is quite
 simple. `editor app/main/views/main/todos.html`.
 
-```
+```RUBY
 ...
       {{ if current_todo }}
         <h2>{{ current_todo._label }}</h2>
