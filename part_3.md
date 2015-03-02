@@ -81,7 +81,7 @@ our page:
 ```
 `line 13`
 
-#### [commit hash](http://www.github.com/rhgraysonii/volt_tutorial/commit/hash)
+#### [commit 497be29e29eac302d903d5326fbb0e83163be9fc](http://www.github.com/rhgraysonii/volt_tutorial/commit/497be29e29eac302d903d5326fbb0e83163be9fc)
 
 ## Persisting Todos
 Now, for a true to do list we need to be able to remove it as well.
