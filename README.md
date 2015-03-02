@@ -1,5 +1,8 @@
 # How to Volt - From 0 to 60
-#### Note: This is a WIP
+### Current Note:
+#### Right now I am redoing this from scratch so that I can make some major changes, 
+#### including having a specific commit that can be checked out for each step. 
+#### Please wait until atleast 3/2/15 to utilize this
 
 ## Introduction
 Hi. You're a developer, or someone interested in writing some code. A web app even! This is fun. Awesome.
