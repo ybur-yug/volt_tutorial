@@ -80,7 +80,7 @@ This will let you browse the file tree in almost any text editor.
 
 Opening `app.rb` seems logical, since we are building an app after all. Let's check that out.
 
-`editor config/base/app.rb`
+`editor config/app.rb`
 
 It seems this holds out default generated `app_secret`, as well as any other global configuration.
 There are also compression, server, and database options. But we need not worry about all that
