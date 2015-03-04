@@ -1,64 +1,72 @@
+# WIP FROM HERE ON
 ## Getting Real
+
+CSS to help display things:
+
+```CSS
+textarea {
+  height: 140px;
+  width: 100%;
+}
+
+.todo-table {
+  width: auto;
+
+  tr {
+    &.selected td {
+    background-color: #428bca;
+    color: #FFFFFF;
+
+    button {
+    color: #000000;
+    }
+  }
+
+  td {
+    padding: 5px;
+    border-top: 1px solid #EEEEEE;
+
+    &.complete {
+      text-decoration: line-through;
+      color: #CCCCCC;
+      }
+    }
+  }
+}
+```
+`app/main/assets/css/app.css.scss`
+
+Now if we go to our page, we will be pleased to see the ability to check
+and remove lists is working perfectly. However, we are not persisting data!
+Once we fix this, we may be able to call this todo app complete. 
+
+`editor app/main/controllers/main_controller.rb`
+
+Directly below the class declaration, we can add:
+
+```
+...
+class MainController < Volt::ModelController
+  model :store
+...
+```
+`line 3`
+
+Now, we can replace all references of page._todos, our current, non-persisted store,
+and move to using MongoDB. If you have not installed Mongo before, you can find
+installation guides [here](link). Once installed, start it as a background process:
+
+`mongod`
+
+From here, we should be automagically moving our todos to mongo. Let's create some
+and try it out. Open several browser windows and start adding/checking/removing todos.
+They will be perfectly up to date every single time!
+
+Now that we've got the basics, lets build something nontrivial.
+
 
 So, we can simply add todos, subtract todos, and delete them. This is fine and dandy but its not a
 'real' application. So let's start with something interesting. Let's start playing with users.
-
-### Users in Volt
-Volt is quite generous in that it provides us a default implementation that allows us to trivially
-handle auth in the user flow process. Work is still being done on it, but no needs for worry there.
-The main idea is its already good and will only get better. By default, the `_users` collection
-will hold all registered Users. Test this by signing a few up manually, and then let us list them
-on the homepage so we can see whose todos these all are.
-
-```RUBY
-...
-  <div class='col-md-1'>
-  {{ _users.each do |u| }}
-    {{ u._name }}<br>
-  {{ end }}
-  </div>
-...
-```
-`inside the row div, after the first col-md-4`
-
-Now, you should see a list of users on the right of your page. Now, what if to make a todo you
-had to be a user so that you were part of whoever was working on this list? And what if we 
-could leave messages for each other? Well, that sounds awesome. Let's do it. But first lets inspect
-this user class a little further and see what exactly the true possibilities are. 
-
-There are several pieces to the user model provided to us for free by default. To begin, the core
-of all of this is the `User` class. If we fire up the console
-
-`bundle exec volt console`
-
-Now, lets check out a user in the store.
-
-`store._users.first`
-
-```RUBY
-=> <User:70114261092380 {:_id=>"ff8995c8ab30371f43b9f4ed", 
-                         :email=>"bob@bob.com",
-                         :hashed_password=>"$2a$10$QhfnyvBMObaOUfD38P/nkeH4Mk5DfnkVBa0ohhh5f0ZCJA5H.5T2a", 
-                         :name=>"bobobob"}
-```
-
-Alright. So, we have a unique ID, an email, and a name. Wonderful. This allows us to do several
-things for free: we can have users 'own' a model. We can give a model a `user_id` specification 
-that will identify which user is related to this new model. We also should dig a little deeper
-into the features rather than just the obvious. If we take a look at the core class, `User` in
-Volt's source we can gather another tidbit.
-
-```RUBY
-...
-    validate login_field, unique: true, length: 8
-    validate :email, email: true
-...
-
-```
-`user.rb, Volt source`
-
-So we also get validations on our login. Checking the emails presence and length. Nice. We also
-find that we can log out a user with `Volt.logout`. 
 
 ### Extending Capability With Models
 We want to validate some things in our todos. And we can do that easily, but first we need some
@@ -83,19 +91,6 @@ this we add a very simple wrapping to the html of our page. Around the todos blo
 [todo block]
 {{ end }}
 ```
-
-Let's continue adding some complexity to this application now that it is user-specific. This will
-let us get beyond the simple out-of-the-box gimmes. As you saw earlier when first creating our
-list, the `e-something` values are for events. Let's add an event that will allow us to take
-advantage of another built in collection, `params`.
-
-If we reference the documentation, this is what we are told of the params collection:
-
-```MARKUP
-params  values will be stored in the params and URL. Routes can be setup to change how params are
-shown in the URL. (See routes for more info)
-```
-
 Okay, awesome. So we can very easily mess with parameters and dont have to worry about query
 strings or anything. Let's start by keeping a current index on which todo is selected in the app.  
 
