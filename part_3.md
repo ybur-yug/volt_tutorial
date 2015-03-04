@@ -195,6 +195,18 @@ list, the `e-something` values are for events.
 
 [commit f596e1b9aa487f723e9c660afb837a276178e36](http://www.github.com/rhgraysonii/volt_tutorial/f596e1b9aa487f723e9c660afb837a276178e36)
 
+Next, as a simple easy win how about we add a total count of todos at the top of our list quickly.
+
+`editor app/main/views/main/todos.html`
+
+Above the label for the submission we can add
+
+```RUBY
+{{ _todos.count }} Todos
+```
+
+#### [commit b020e7f62b93d2c16fb6fcc2202cba40e3810d38](http://www.github.com/rhgraysonii/volt_tutorial/commit/b020e7f62b93d2c16fb6fcc2202cba40e3810d38)
+
 
 # WIP AFTER HERE
 CSS to help display things:
