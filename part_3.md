@@ -125,7 +125,7 @@ model :store
 Inside the class, and then replace all instange of `page.` with `''`. If we do the same thing in
 the view, we will be good to go and have persisted todos!
 
-[commit 773b4825ed70acf97d3b8a82e5b7bf57115ad89f](http://www.github.com/rhgraysonii/volt_tutorial/commit/773b4825ed70acf97d3b8a82e5b7bf57115ad89f)
+#### [commit 773b4825ed70acf97d3b8a82e5b7bf57115ad89f](http://www.github.com/rhgraysonii/volt_tutorial/commit/773b4825ed70acf97d3b8a82e5b7bf57115ad89f)
 
 Now, let's get a little more intense. Now we will start messing with users. This is one of the most
 robust free features we get in Volt and offers quite a bit for us to toy with.
