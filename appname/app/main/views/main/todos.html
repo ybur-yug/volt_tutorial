@@ -21,4 +21,11 @@
           {{ end }}
         </table>
       </div>
+      <div class='col-md-2'>
+      {{ if Volt.user? }}
+        {{ _users.each do |u| }}
+          {{ u._name }}<br>
+        {{ end }}
+      {{ end }}
+      </div>
     </body>
