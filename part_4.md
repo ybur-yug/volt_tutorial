@@ -58,7 +58,7 @@ Once we fix this, we may be able to call this todo app complete.
 
 Directly below the class declaration, we can add:
 
-```
+```RUBY
 ...
 class MainController < Volt::ModelController
   model :store
