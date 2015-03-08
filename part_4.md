@@ -1,3 +1,5 @@
+# WIP FROM HERE ON
+
 ## Adding Due Dates
 
 ## Model Relations
@@ -9,8 +11,4 @@
 ## Progress Bar
 
 ## Package it as a component
-
-
-
-# WIP FROM HERE ON
 
