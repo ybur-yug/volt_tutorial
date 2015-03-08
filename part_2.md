@@ -1,4 +1,7 @@
 ## Getting Started
+
+#### Note, this can be skipped using the provided [Dockerfile](link) if you so desire.
+
 I will treat this tutorial as a system for someone with 0 configuration coming in. So we will cover 'basic' things
 such as managing Ruby versions, using bundler, and generally configuring an environment for development.
 
