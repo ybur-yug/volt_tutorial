@@ -1,11 +1,11 @@
 if ENV['BROWSER']
   require 'spec_helper'
 
-  describe 'sample integration test', type: :feature do
-    it 'should load the page' do
+  describe 'Todo List', type: :feature do
+    it 'should have the list title' do
       visit '/'
 
-      expect(page).to have_content('Home')
+      expect(page).to have_content('Todos')
     end
   end
 end
