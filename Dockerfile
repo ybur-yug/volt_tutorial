@@ -1,9 +1,3 @@
-#
-# MongoDB Dockerfile
-#
-# https://github.com/dockerfile/mongodb
-#
-
 # Pull base image.
 FROM dockerfile/ubuntu
 
@@ -30,16 +24,6 @@ CMD ["mongod"]
 EXPOSE 27017
 EXPOSE 28017
 
-# Next: Ruby
-
-# Ruby Dockerfile
-#
-# https://github.com/dockerfile/ruby
-#
-
-# Pull base image.
-FROM dockerfile/ubuntu
-
 # Install Ruby.
 RUN \
   apt-get update && \
@@ -52,13 +36,15 @@ WORKDIR /data
 # Define default command.
 CMD ["bash"]
 
-# Next: Volt
-RUN \
-gem install volt
-
 # Next: Git, bundle
 RUN \
-apt-get install git && apt-get install bundler \
-cd appname
-bundle install
+apt-get install git && apt-get install bundler
+
+# Next: Volt
+RUN \
+gem install volt \
+volt new appname \
+cd appname \
+bundle
+
 
