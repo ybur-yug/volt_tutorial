@@ -247,8 +247,11 @@ us. Awesome. Now we can modify our counts at the top to use these new methds.
 `lines 10-11`
 
 I have broken this into two separate commits to the components can be seen separately.
-[commit 066f3e6388b17ecda93fcb43ebb128746cbb57eb](http://www.github.com/rhgraysonii/volt_tutorial/commit/066f3e6388b17ecda93fcb43ebb128746cbb57eb) as well as
-[commit 317b3597bcca6b3c6c535b2b4401a8e13fdcd4d1](http://www.github.com/rhgraysonii/volt_tutorial/commit/317b3597bcca6b3c6c535b2b4401a8e13fdcd4d1)
+
+#### [commit 066f3e6388b17ecda93fcb43ebb128746cbb57eb](http://www.github.com/rhgraysonii/volt_tutorial/commit/066f3e6388b17ecda93fcb43ebb128746cbb57eb) as well as
+
+
+#### [commit 317b3597bcca6b3c6c535b2b4401a8e13fdcd4d1](http://www.github.com/rhgraysonii/volt_tutorial/commit/317b3597bcca6b3c6c535b2b4401a8e13fdcd4d1)
 
 ## Todo Ownership
 
