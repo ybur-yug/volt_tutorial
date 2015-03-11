@@ -250,4 +250,13 @@ I have broken this into two separate commits to the components can be seen separ
 [commit 066f3e6388b17ecda93fcb43ebb128746cbb57eb](http://www.github.com/rhgraysonii/volt_tutorial/commit/066f3e6388b17ecda93fcb43ebb128746cbb57eb) as well as
 [commit 317b3597bcca6b3c6c535b2b4401a8e13fdcd4d1](http://www.github.com/rhgraysonii/volt_tutorial/commit/317b3597bcca6b3c6c535b2b4401a8e13fdcd4d1)
 
+## Todo Ownership
+
+This section is currently impossible until the `v0.8.0` release
+
+## Adding an Index for Current Todos
+
+## Adding a Description
+
+## Utilizing a Buffer
 [Next Chapter (WIP)](/part_4.md)
