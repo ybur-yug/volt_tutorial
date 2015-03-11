@@ -8,6 +8,7 @@
           <div class='form-group'>
             <label>Todo</label>
             <center><h2>{{ completed }} out of {{ _todos.count }} Todos complete</h2></center>
+            <center><h3>{{ percent_complete }}%</h3></center>
             <input class="form-control" type="text" value="{{ _new_todo }}">
           </div>
         </form>
