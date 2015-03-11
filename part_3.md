@@ -207,4 +207,47 @@ Above the label for the submission we can add
 
 #### [commit b020e7f62b93d2c16fb6fcc2202cba40e3810d38](http://www.github.com/rhgraysonii/volt_tutorial/commit/b020e7f62b93d2c16fb6fcc2202cba40e3810d38)
 
-[Getting Real](/part_4.md)
+Now, we will keep adding some flavor to these simple todos. Why not along with a count, we add the
+percentage of tasks complete. If we get this count, we could later even have a progress bar on our
+list. To do this is quite simple. We will just need to add some controller logic.
+
+`editor app/main/controllers/main_controller.rb`
+
+```RUBY
+  def completed
+    _todos.count { |v| v._complete.true? }
+  end
+ 
+  def percent_complete
+    (completed.to_f / _todos.count * 100).round 
+  end
+```
+`anywhere above private methods`
+
+The first one may look a bit off at first. In Ruby, we often pass 'blocks' into our functions. This
+is exactly what we are doing here. We pass a block of code into the function where we check if the
+attribute `complete` is true. This does not exist yet, but we can add it quite simply on the on our
+frontend.
+
+`editor app/main/views/main/todos.html`
+
+```HTML
+
+              <input type="checkbox" checked="{{ todo._complete }}"/>
+```
+`line 20`
+
+This will bind a `complete` value to the checkbox it adds, and if checked it will return true for
+us. Awesome. Now we can modify our counts at the top to use these new methds.
+
+```RUBY
+            <center><h2>{{ completed }} out of {{ _todos.count }} Todos complete</h2></center>
+            <center><h3>{{ percent_complete }}%</h3></center>
+```
+`lines 10-11`
+
+I have broken this into two separate commits to the components can be seen separately.
+[commit 066f3e6388b17ecda93fcb43ebb128746cbb57eb](http://www.github.com/rhgraysonii/volt_tutorial/commit/066f3e6388b17ecda93fcb43ebb128746cbb57eb) as well as
+[commit 317b3597bcca6b3c6c535b2b4401a8e13fdcd4d1](http://www.github.com/rhgraysonii/volt_tutorial/commit/317b3597bcca6b3c6c535b2b4401a8e13fdcd4d1)
+
+[Next Chapter (WIP)](/part_4.md)
