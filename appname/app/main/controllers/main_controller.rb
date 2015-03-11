@@ -16,6 +16,10 @@ class MainController < Volt::ModelController
     _todos.delete(todo)
   end
 
+  def completed
+    _todos.count { |v| v._complete.true? }
+  end
+
   private
 
   # The main template contains a #template binding that shows another
