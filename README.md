@@ -2,7 +2,7 @@
 
 # NOTE:
 
-#### This tutorial is currently working up through the end of part 3. Beyond this, the features that are being built upon require version 0.8.0's release which is soon, but has no officially announced date
+#### This tutorial is currently working up through the end of part 3. Beyond this, the features that are being built upon require version 0.8.0's release which is soon, but has no officially announced date. Tag me in the Volt [gitter chat room](http://www.gitter.im/voltrb/volt)
 
 
 Hi. You're a developer, or someone interested in writing some code. A web app even! This is fun. Awesome.
