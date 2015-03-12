@@ -3,7 +3,7 @@
   <:Body>
     <h1>Todos</h1>
     <body>
-      <div class='col-lg-10'>
+      <div class='col-lg-8'>
         <form e-submit="add_todo" role="form">
           <div class='form-group'>
             <label>Todo</label>
@@ -24,11 +24,19 @@
           {{ end }}
         </table>
       </div>
-      <div class='col-md-2'>
-      {{ if Volt.user? }}
-        {{ _users.each do |u| }}
-          {{ u._name }}<br>
+      <div class='col-lg-4'>
+        <div class='row'
+        {{ if Volt.user? }}
+          {{ _users.each do |u| }}
+            {{ u._name }}<br>
+          {{ end }}
         {{ end }}
-      {{ end }}
+        </div>
+        <div>
+          {{ if current_todo }}
+            <h1>{{ current_todo._name }}</h1>
+            <textarea>{{ current_todo._description }}</textarea>
+          {{ end }}
+        </div>
       </div>
     </body>
