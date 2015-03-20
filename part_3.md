@@ -255,7 +255,8 @@ I have broken this into two separate commits to the components can be seen separ
 
 ## Todo Ownership
 
-This section is currently impossible until the `v0.8.0` release
+This section is currently impossible without monkey patching `Volt::User` and is coming in a new release, so will
+be finished then.
 
 ## Adding an Index for Current Todos
 
