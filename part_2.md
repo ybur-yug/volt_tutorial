@@ -1,7 +1,5 @@
 ## Getting Started
 
-#### Note, this can be skipped using the provided [Dockerfile](link) if you so desire.
-
 I will treat this tutorial as a system for someone with 0 configuration coming in. So we will cover 'basic' things
 such as managing Ruby versions, using bundler, and generally configuring an environment for development.
 
@@ -93,7 +91,7 @@ the server, and will also be absent from the repository's code. If you are a uni
 vars should not be a foreign concept. 
 
 Personally, I keep project specific dotfiles for these 
-named in the style `.appname_vars`. So, `editor .appname_vars` and lets set it. Delete the
+named in the style `.appname_secret`. So, `editor .appname_secret` and lets set it. Delete the
 string from `app.rb` and paste it in as:
 
 `export APPNAME_SECRET='whatever_the_generated_string_was'`
@@ -108,7 +106,7 @@ with
 
 and once we source it, we have securely removed it from the codebase:
 
-`source .appname_vars`, and we are golden.
+`source .appname_secret`, and we are golden.
 
 Now, we should initialize a git repository and make our initial commit.
 
@@ -129,6 +127,15 @@ the directories and files included by default.
 `git commit -m 'initial working build'`
 
 #### [commit 8d5b14742e172a2f82ad9acfdefe816b5bbd5b4a](http://www.github.com/rhgraysonii/volt_tutorial/commit/8d5b14742e172a2f82ad9acfdefe816b5bbd5b4a)
+
+
+## Note: Screencasts
+With each section I am working to make a screencast to go with the commit. They are played back
+using the command line tool [shelr](link). The files are in the directory `screencasts/file_name/`
+and are simply orderd by number in each folder. They will also be linked to at the end of
+each section. I will eventually have them on youtube.
+
+#### [screencast](link)
 
 Now, lets dive in deeper and take a look at how we can start adding some models and get
 functionality going on top of these simple users we can already have sign up and log
