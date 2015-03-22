@@ -2,9 +2,9 @@
 
 # NOTE:
 
-#### I have moved the main development to a private repository,
-#### and as such will be adding to this in chunks rather than
-#### allowing the state to change so ofte. Stay tuned :) 3/21/15
+#### I have moved the main development to a private repository, and as such will
+#### be adding to this in chunks rather than allowing the state to change so often.
+#### Stay tuned :) 3/21/15
 
 
 Hi. You're a developer, or someone interested in writing some code. A web app even! This is fun. Awesome.
