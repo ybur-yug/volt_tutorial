@@ -2,7 +2,9 @@
 
 # NOTE:
 
-#### This tutorial is currently working up through the end of part 3. Beyond this, the features that are being built upon require the new version's release which is soon, but has no officially announced date. Tag me in the Volt [gitter chat room](http://www.gitter.im/voltrb/volt)
+#### I have moved the main development to a private repository,
+#### and as such will be adding to this in chunks rather than
+#### allowing the state to change so ofte. Stay tuned :) 3/21/15
 
 
 Hi. You're a developer, or someone interested in writing some code. A web app even! This is fun. Awesome.
