@@ -265,7 +265,7 @@ Since we already are displaying a percentage with our `percent_complete` method,
 
 we can take the chunk we have, and change it like so.
 
-```
+```RUBY
 ...
             <center>
               <h2>{{ completed }} out of 
