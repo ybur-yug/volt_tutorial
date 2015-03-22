@@ -258,66 +258,35 @@ I have broken this into two separate commits to the components can be seen separ
 This section is currently impossible without monkey patching `Volt::User` and is coming in a new release, so will
 be finished then.
 
-## Adding an Index for Current Todos
-
-Adding an index will allow us to interact with each of our todos without needing anything
-but a simple click. With Volt's easy usage of events, adding this little layer of interactivity
-will be simple. First step: We need something to do with this current todo. Let's rework our frontend
-a bit for that.
+## Adding A Progress Bar
+Since we already are displaying a percentage with our `percent_complete` method, we may as well spice it up and make it a little more interesting.
 
 `editor app/main/views/main/todos.html`
 
-```HTML
-<:Title>
-  Todos
-  <:Body>
-    <h1>Todos</h1>
-    <body>
-      <div class='col-lg-8'> # changed to 8-4 from 10-2
-        <form e-submit="add_todo" role="form">
-          <div class='form-group'>
-            <label>Todo</label>
-            <center><h2>{{ completed }} out of {{ _todos.count }} Todos complete</h2></center>
-            <center><h3>{{ percent_complete }}%</h3></center>
-            <input class="form-control" type="text" value="{{ _new_todo }}">
-          </div>
-        </form>
-        <table class="todo-table">
-          {{ _todos.each do |todo| }}
-          <tr>
-            <td>
-              <h5>{{ todo._name }}
-              <input type="checkbox" checked="{{ todo._complete }}"/>
-              <button e-click="remove_todo(todo)">x</button>
-            </td>
-          </tr>
-          {{ end }}
-        </table>
-      </div>
-      <div class='col-lg-4'> # changed to 8-4 from 10-2
-        <div class='row'> # Add row for users, beneath it...
-        {{ if Volt.user? }}
-          {{ _users.each do |u| }}
-            {{ u._name }}<br>
-          {{ end }}
-        {{ end }}
-        </div>
-        <div>
-          {{ if current_todo }} # we add this new div that will call a controller method
-            <h1>{{ current_todo._name }}</h1>
-            <textarea>{{ current_todo._description }}</textarea>
-          {{ end }}
-        </div>
-      </div>
-    </body>
+we can take the chunk we have, and change it like so.
+
+```
+...
+            <center>
+              <h2>{{ completed }} out of 
+                {{ _todos.count }} 
+                Todos complete</h2>  
+              </center>
+            <div class='progress-bar'
+                style='background-color:black;
+                width: {{ percent_complete}}%;'>
+              <p style='background-color:black;'>
+                <h6 style='color:white;'>{{ percent_complete }}%</h6>
+              </p>
+            </div><br><br><br>
+...
 ```
 
-Boom! Follow the comments for the changes and you can see we clearly have a ballin' new frontend.
-Now, to move back to our controller.
+What this does, is rather than just put our `percent_complete` value into the DOM, we make it tied to a css rule and set a background. Now we have a reactive, live progress bar that will allow us to get visual feedback rather than just see a boring number. It's wonderful how easy it is to do this with Volt huh?
 
-`editor app/main/controllers/main_controller.rb`
-
-
+Later, we are going to extract this, create a component for it, and then allow it to be reuseable. After this, we will go
+in and replace it with Volt's provided progress-bar component. The idea is to illustrate how easy it is to isolate things
+that are used often and share them with the framework. 
 
 ## Utilizing a Buffer
 [Next Chapter (WIP)](/part_4.md)
