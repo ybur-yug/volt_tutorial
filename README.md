@@ -2,8 +2,7 @@
 
 # NOTE:
 
-#### I have access to the permissions and ownership pieces that will ship soon, and
-#### will add these sections as soon as they are complete, as I'm doing it in a private repo
+#### I have access to the permissions and ownership pieces that willship soon, andwill add these sections as soon as they are complete, as I'm doing it in a private repo
 #### Stay tuned :) 3/26
 
 Hi. You're a developer, or someone interested in writing some code. A web app even! This is fun. Awesome.
