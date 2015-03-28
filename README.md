@@ -2,8 +2,8 @@
 
 # NOTE:
 
-#### I have access to the permissions and ownership pieces that willship soon, andwill add these sections as soon as they are complete, as I'm doing it in a private repo
-#### Stay tuned :) 3/26
+#### I will be continuing development on this Monday with many new additions
+#### Stay tuned :) 3/28
 
 Hi. You're a developer, or someone interested in writing some code. A web app even! This is fun. Awesome.
 We're going to learn about Volt today. Volt is a web framework that allows us to write applications in which
