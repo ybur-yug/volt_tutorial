@@ -54,7 +54,6 @@ these parameters change a new path is set and the controller changes if needed.
 |---    |---    |---    |---
 |x      |x  |x   |index
 |x      |x  |index   |body
-|x      |index  |index   |index
 |x      |index  |index   |body
 |index      |main  |index   |body
 
