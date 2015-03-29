@@ -1,9 +1,7 @@
 # Introducting Volt
 
 # NOTE:
-
-#### I will be continuing development on this Monday with many new additions
-#### Stay tuned :) 3/28
+#### Genius annotations may be broken while github is being DDoS'd, if you have trouble with a page, remove `genius.it` from the start of the url
 
 #### [epub download](https://drive.google.com/file/d/0B-VHRPJNj6uKekZlaE1qQlg1d0U/view?usp=sharing)
 #### [mobi download](https://drive.google.com/file/d/0B-VHRPJNj6uKQ1VtbnN4cTFaclk/view?usp=sharing)
