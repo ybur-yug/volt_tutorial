@@ -1,13 +1,11 @@
-# WIP FROM HERE ON
-
 ## Adding Due Dates
 
 ## Model Relations
 
 ## Validations
 
-## Adding A Component - volt-field
+## Adding A Component - volt-fields
 
-## Progress Bar
+## Adding Multiple Lists
 
 ## Package it as a component
