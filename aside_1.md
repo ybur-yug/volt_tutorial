@@ -64,3 +64,5 @@ So, all in all
 Url -> Parameters -> Path String -> Templating Binding -> Controller -> View
 
 Hopefully this helps demystify some of the inner workings a bit for you.
+
+[Next Chapter (WIP)](/part_4.md)
