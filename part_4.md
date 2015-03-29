@@ -57,8 +57,28 @@ What we have doe here is call our controller method that handles the pagination 
 our helper that `volt-pagination` gives us. Check out your page, and once you have enough todos you will have pagination!
 
 ## Buffers
+With the introduction of a buffer, we can handle errors on our todo and resolve them using the promise that is returned.
+If we want to do this, we can switch a little bit up in our controller:
 
-## Adding Due Dates
+`editor app/main/controllers/main/main_controller.rb`
+
+```
+...
+def add_todo
+  new_todo = _todos.new.buffer
+  new_todo._name: _new_todo
+  new_todos.save!.then do
+    flash._successes "Todo Saved"
+  end.fail do |err|
+    flash._errors "Todo Failed To save due to #{err}"
+  end
+  _new_todo = ''
+end
+...
+```
+
+This will now hold it in the interim, wait for the promise to resolve, and then proceed to give you the appropriate flash
+message based upon the return value.
 
 ## Model Relations
 
