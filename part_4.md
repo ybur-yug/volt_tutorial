@@ -62,7 +62,7 @@ If we want to do this, we can switch a little bit up in our controller:
 
 `editor app/main/controllers/main/main_controller.rb`
 
-```
+```RUBY
 ...
 def add_todo
   new_todo = _todos.new.buffer
