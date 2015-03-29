@@ -5,8 +5,8 @@
 #### I will be continuing development on this Monday with many new additions
 #### Stay tuned :) 3/28
 
-#### [epub download](https://drive.google.com/file/d/0B-VHRPJNj6uKS0FzenFjcE1wUlk/view?usp=sharing)
-#### [mobi download](https://drive.google.com/file/d/0B-VHRPJNj6uKUWRJRmRERFJtYWs/view?usp=sharing)
+#### [epub download](https://drive.google.com/file/d/0B-VHRPJNj6uKekZlaE1qQlg1d0U/view?usp=sharing)
+#### [mobi download](https://drive.google.com/file/d/0B-VHRPJNj6uKQ1VtbnN4cTFaclk/view?usp=sharing)
 
 Hi. You're a developer, or someone interested in writing some code. A web app even! This is fun. Awesome.
 We're going to learn about Volt today. Volt is a web framework that allows us to write applications in which
