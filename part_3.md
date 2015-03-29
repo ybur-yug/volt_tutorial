@@ -288,5 +288,4 @@ Later, we are going to extract this, create a component for it, and then allow i
 in and replace it with Volt's provided progress-bar component. The idea is to illustrate how easy it is to isolate things
 that are used often and share them with the framework. 
 
-## Utilizing a Buffer
 [Next Chapter (WIP)](/part_4.md)
