@@ -3,6 +3,8 @@
 # NOTE:
 #### Genius annotations may be broken while github is being DDoS'd, if you have trouble with a page, remove `genius.it` from the start of the url
 
+#### Also, until the 0.9.0 release this will not be added to
+
 #### [epub download](https://drive.google.com/file/d/0B-VHRPJNj6uKekZlaE1qQlg1d0U/view?usp=sharing)
 #### [mobi download](https://drive.google.com/file/d/0B-VHRPJNj6uKQ1VtbnN4cTFaclk/view?usp=sharing)
 
