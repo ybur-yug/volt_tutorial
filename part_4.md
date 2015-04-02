@@ -80,11 +80,30 @@ end
 This will now hold it in the interim, wait for the promise to resolve, and then proceed to give you the appropriate flash
 message based upon the return value.
 
-## Model Relations
-
 ## Validations
+Up to this point, we have exclusively operated within our controller and view in order to persist any sort of logic. While this
+is easy, and it makes for an awesome and fast bootstrapping process, if we want to get nontrivial functionality it would be
+best 
+if we had something in which we could namespace our models and embed some of the logic there, rather than ending up with this
+single massive controller called `MainController`. So, lets make a model:
 
+`bundle exec volt generate model Todo`
+
+Now, with this we see a file being created in our `app/main/models` directory. Inside here, we can open it up and see
+it is quite simple by default
+
+```RUBY
+class Todo < Volt::Model
+end
+
+```
+
+But, we now have a very explicit space we can declare logic and methods for our todos!
+
+#### More soon
 ## Adding A Component - volt-fields
+
+## Model Relations
 
 ## Adding Multiple Lists
 
