@@ -100,11 +100,12 @@ end
 
 But, we now have a very explicit space we can declare logic and methods for our todos!
 
-#### More soon
 ## Adding A Component - volt-fields
 
 ## Model Relations
 
 ## Adding Multiple Lists
+
+## Extracting Todos
 
 ## Package it as a component
