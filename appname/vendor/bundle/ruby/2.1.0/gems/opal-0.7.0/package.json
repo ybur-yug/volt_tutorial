@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "glob": "latest",
+    "js-yaml": "latest"
+  },
+  "devDependencies": {
+    "doxx": "latest"
+  }
+}

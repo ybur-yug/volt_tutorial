@@ -9,3 +9,5 @@ component 'bootstrap-jumbotron-theme'
 
 # provides templates for login, signup, and logout
 component 'user-templates'
+
+component 'pagination'

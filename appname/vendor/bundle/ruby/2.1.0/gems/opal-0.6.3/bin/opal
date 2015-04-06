@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+require 'opal/cli_options'
+options = Opal::CLIOptions.new
+options.parse!
+
+
+if ARGV.empty? and !options.options[:evals]
+  if options.options[:verbose]
+    exit
+  else
+    options.options[:evals] ||= []
+    options.options[:evals] << gets(nil)
+  end
+end
+
+require 'opal/cli'
+cli = Opal::CLI.new options.options.merge(:filename => ARGV.first)
+
+begin
+  cli.run
+rescue Opal::CLI::MissingNodeJS => e
+  $stderr.puts e.message
+  exit 127
+end

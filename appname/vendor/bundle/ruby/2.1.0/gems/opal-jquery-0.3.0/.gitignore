@@ -1,0 +1,8 @@
+.DS_Store
+*.gem
+Gemfile.lock
+build
+gh-pages
+/.bundle
+.yardoc
+/doc

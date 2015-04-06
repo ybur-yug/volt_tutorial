@@ -1,0 +1,2 @@
+component 'shared'
+component 'slideshow'

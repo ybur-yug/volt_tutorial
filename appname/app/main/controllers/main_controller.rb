@@ -1,23 +1,39 @@
 class MainController < Volt::ModelController
-  model :store
+  model :page
 
   def index
   end
 
   def about
   end
-  
+
+  def todos
+    self.model = :store
+  end
+
+  def start_offset
+    params._page.or(1).to_i * per_page
+  end
+
+  def per_page
+    5
+  end
+
+  def paged_todos
+    store._todos.skip(start_offset).limit(per_page) 
+  end
+
   def add_todo
-    _todos << { name: _new_todo }
+    self._todos << { name: _new_todo }
     _new_todo = ''
   end
 
   def remove_todo(todo)
-    _todos.delete(todo)
+    self._todos.delete(todo)
   end
 
   def completed
-    _todos.count { |v| v._complete.true? }
+    self._todos.count { |v| v._complete.true? }
   end
   
   def percent_complete

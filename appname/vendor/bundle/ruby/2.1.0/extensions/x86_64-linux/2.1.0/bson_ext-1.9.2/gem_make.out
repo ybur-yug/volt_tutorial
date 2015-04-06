@@ -1,0 +1,25 @@
+/usr/bin/ruby2.1 extconf.rb 
+checking for asprintf()... yes
+checking for ruby/st.h... yes
+checking for ruby/regex.h... yes
+checking for ruby/encoding.h... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling encoding_helpers.c
+compiling cbson.c
+cbson.c: In function ‘write_element’:
+cbson.c:168:31: warning: ignoring return value of ‘asprintf’, declared with attribute warn_unused_result [-Wunused-result]
+ #define INT2STRING(buffer, i) asprintf(buffer, "%d", i);
+                               ^
+cbson.c:317:17: note: in expansion of macro ‘INT2STRING’
+                 INT2STRING(&name, i);
+                 ^
+compiling bson_buffer.c
+linking shared-object bson_ext/cbson.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cbson.so ./.gem.20150329-6678-1yrw8b9/bson_ext
+installing default cbson libraries

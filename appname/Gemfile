@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'volt', '0.8.27.beta3'
-
+gem 'volt', '0.8.26'
 
 # The following gem's are optional for themeing
 
@@ -13,6 +12,8 @@ gem 'volt-bootstrap-jumbotron-theme'
 
 # User templates for login, signup, and logout menu.
 gem 'volt-user-templates'
+gem 'volt-progress-bar'
+gem 'volt-pagination'
 
 # Server for MRI
 platform :mri do

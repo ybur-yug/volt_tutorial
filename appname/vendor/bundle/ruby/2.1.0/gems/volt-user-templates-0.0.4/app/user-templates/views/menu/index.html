@@ -1,0 +1,25 @@
+<:Body>
+
+  {{ if Volt.user }}
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="glyphicon glyphicon-user"></span>
+        {{ show_name }}
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="/account">Account</a>
+        </li>
+        <li class="divider"></li>
+        <li><a e-click="Volt.logout">Logout</a></li>
+      </ul>
+    </li>
+  {{ else }}
+    <li>
+      <a href="/login">
+        <span class="glyphicon glyphicon-user"></span>
+        Login
+      </a>
+    </li>
+  {{ end }}

@@ -4,39 +4,30 @@
     <h1>Todos</h1>
     <body>
       <div class='col-lg-8'>
+        <h1> {{ params.to_h.to_s }} </h1>
         <form e-submit="add_todo" role="form">
           <div class='form-group'>
             <label>Todo</label>
             <center><h2>{{ completed }} out of {{ _todos.count }} Todos complete</h2></center>
-            <center><h3>{{ percent_complete }}%</h3></center>
+            <div class='progress-bar' style='background-color:black; color: blue; width: {{ percent_complete}}%;'>
+              <p style='background-color:black;'><h6 style='color:white;'>{{ percent_complete }}%</h6></p>
+            </div><br><br>
+              <br>
             <input class="form-control" type="text" value="{{ _new_todo }}">
           </div>
         </form>
         <table class="todo-table">
           {{ _todos.each do |todo| }}
-          <tr>
+          <tr >
             <td>
               <h5>{{ todo._name }}
               <input type="checkbox" checked="{{ todo._complete }}"/>
               <button e-click="remove_todo(todo)">x</button>
+              </h5>
             </td>
           </tr>
           {{ end }}
         </table>
+        <:pagination total='{{ _todos.count }}'>
       </div>
-      <div class='col-lg-4'>
-        <div class='row'
-        {{ if Volt.user? }}
-          {{ _users.each do |u| }}
-            {{ u._name }}<br>
-          {{ end }}
-        {{ end }}
-        </div>
-        <div>
-          {{ if current_todo }}
-            <h1>{{ current_todo._name }}</h1>
-            <textarea>{{ current_todo._description }}</textarea>
-          {{ end }}
-        </div>
-      </div>
-    </body>
+/body>
