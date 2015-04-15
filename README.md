@@ -2,7 +2,7 @@
 
 # NOTE:
 ## The guide is currently being rewritten for 0.9.x
-## To follow it, until I have everything updated please use Volt 0.8.x for things to work.
+## To follow it, until I have everything updated please use Volt 0.8.x for things to work. It should be out later this week (4/15)
 
 
 Hi. You're a developer, or someone interested in writing some code. A web app even! This is fun. Awesome.
