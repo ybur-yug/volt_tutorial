@@ -92,5 +92,83 @@ This is what we should be seeing now.
 
 ![Populated with destroy and checkboxes](http://i.imgur.com/yJu3Q8l.png)
 
+Now, so far we have been essentially going through the tutorial in the documentation. We have one more addition
+involving this, and we will then proceed to go on and create a dashboard for various social media sites. First though,
+we should style this up a bit and allow us to mark a todo completed. We can put this in `app/main/assets/css/app.css.scss`
+
+```CSS
+textarea {
+    height: 140px;
+      width: 100%;
+}
+
+.todo-table {
+  width: auto;
+
+  tr {
+    &.selected td {
+      background-color: #428bca;
+      color: #FFFFFF;
+
+      button {
+        color: #000000;
+      }
+    }
+
+  td {
+        padding: 5px;
+        border-top: 1px solid #EEEEEE;
+
+        &.complete {
+        text-decoration: line-through;
+        color: #CCCCCC;
+      }
+    }
+  }
+}
+
+```
+
+With this, we can bind a class to our HTML in the frontend based off some logic. I am showing the
+entirety of `todos.html` because it has also been restructured into a table with these new changes.
+
+```RUBY
+<:Body>
+  <h1>Todo List</h1>
+
+  <form e-submit="add_todo" role="form">
+    <div class="form-group">
+      <label>Todo</label>
+      <input class="form-control" type="text" value="{{ page._new_todo }}" />
+    </div>
+  </form>
+
+  <table class="todo-table">
+    {{ page._todos.each do |todo| }}
+      <tr>
+        <td><input type="checkbox" checked="{{ todo._completed }}" /></td>
+        <td class="{{ if todo._completed }}complete{{ end }}">{{ todo._name }}</td>
+        <td><button e-click="todo.destroy">X</button></td>
+      </tr>
+    {{ end }}
+  </table>
+
+```
+
+With this, we now get a lovely strikethrough on our todos. Next, it will be time to actually persist
+them!
+
+![todos with style](http://i.imgur.com/YBccwV5.png)
+
+To begin persisting our todos, our first step is quite simple. We just need to hop back into `main_controller.rb`
+
+```RUBY
+class MainController < Volt::ModelController
+  model :store
+  ...
+end
+```
+
+once we do this, instead of using `page._todos` we can just access `_todos`. 
 [Next Chapter](/aside_1.md)
 
