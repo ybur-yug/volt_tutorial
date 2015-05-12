@@ -1,6 +1,0 @@
-lib/opal.rb
-lib/opal/**/*.rb
---markup markdown
--
-CHANGELOG.md
-docs/compiler_directives.md

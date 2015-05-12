@@ -1,3 +1,0 @@
-<%= some_helper do %>
-  <h1>Hi there</h1>
-<% end %>
