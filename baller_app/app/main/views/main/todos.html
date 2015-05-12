@@ -1,0 +1,19 @@
+<:Body>
+  <h1>Todo List</h1>
+
+  <form e-submit="add_todo" role="form">
+    <div class="form-group">
+      <label>Todo</label>
+      <input class="form-control" type="text" value="{{ _new_todo }}" />
+    </div>
+  </form>
+
+  <table class="todo-table">
+    {{ _todos.each do |todo| }}
+      <tr>
+        <td><input type="checkbox" checked="{{ todo._completed }}" /></td>
+        <td class="{{ if todo._completed }}complete{{ end }}">{{ todo._name }}</td>
+        <td><button e-click="todo.destroy">X</button></td>
+      </tr>
+    {{ end }}
+  </table>

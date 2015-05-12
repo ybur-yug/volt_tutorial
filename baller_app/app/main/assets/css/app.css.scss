@@ -1,0 +1,29 @@
+textarea {
+  height: 140px;
+  width: 100%;
+}
+
+.todo-table {
+  width: auto;
+
+  tr {
+    &.selected td {
+      background-color: #428bca;
+      color: #FFFFFF;
+
+      button {
+        color: #000000;
+      }
+    }
+
+    td {
+      padding: 5px;
+      border-top: 1px solid #EEEEEE;
+
+      &.complete {
+        text-decoration: line-through;
+        color: #CCCCCC;
+      }
+    }
+  }
+}
