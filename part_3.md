@@ -58,6 +58,9 @@ Our next step is to add this method to the controller. Open up `/app/main/contro
     end
 ...
 ```
+Now, we should be seeing this empty list when we load the server up.
+
+![Empty](http://i.imgur.com/FicHPjT.png)
 
 So as you can see here, with our `e-submit` we use the method `add_todo` which invoked the value we assigned
 to a volt model implicitely with `page._new_todo`. 
@@ -79,9 +82,15 @@ To do this, we start with some frontend changes:
 
 ```RUBY
 ...
-  <input type='checkbox' checked='{{ todo._completed}}'/>
-  <h4>{{todo._name # from inside the block we just made }}</h4>
-  <button e-click='todo.destroy'>X</button>
+  <h4><input type='checkbox' checked='{{ todo._completed}}'/>
+    {{todo._name }}
+  <button e-click='todo.destroy'>X</button></h4>
+...
 ```
+
+This is what we should be seeing now.
+
+![Populated with destroy and checkboxes](http://i.imgur.com/yJu3Q8l.png)
+
 [Next Chapter](/aside_1.md)
 
