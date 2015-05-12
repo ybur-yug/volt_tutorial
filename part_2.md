@@ -4,3 +4,5 @@ entirety of what this chapter used to. This includes Ruby installation, setting 
 your dev environment in general prepared for Volt.
 
 ## [Find It Here](https://github.com/ybur-yug/getting_started_with_volt)
+
+#### [Next Chapter](https://github.com/ybur-yug/volt_tutorial/blob/master/part_3.md)
