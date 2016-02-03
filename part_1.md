@@ -1,5 +1,5 @@
 ## Why Volt?
-#### Note: This is a rough retelling of [@ryanstout](link)'s talk at Rubyconf.
+> **Note: This is a rough retelling of [@ryanstout](link)'s talk at Rubyconf.**
 
 Web Development has hit a trend that has shown it's head in the past. This pattern, like many others, is a possible indication that history oft repeats itself. 
 
@@ -28,10 +28,8 @@ Lets take a look at the elements of complexity in the server and clientside that
 
 [The Pragmatic Programmer](link) said
 
-```
-DRY—Don’t Repeat Yourself
+> DRY—Don’t Repeat Yourself  
 Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
-```
 
 It would appear as if we are disappointing sensei with this design pattern. But what is the core issue here? 
 
@@ -39,11 +37,9 @@ Theoretically, this could be as 'simple' as a massive refactoring. Work utilizin
 
 There is a word in mathematics, isomorphic
 
-```
-i·so·mor·phic
-adjective: isomorphic; adjective: isomorphous
+> i·so·mor·phic  
+adjective: isomorphic; adjective: isomorphous  
     corresponding or similar in form and relations.
-```
 
 It would seem that our client and server could potentially be developed for isomorphically.
 
@@ -55,9 +51,9 @@ Well, we hope it is isomorphic development with Volt.
 
 Now instead of REST and JSON, communicating over all these API's we can simply share the code between the client and server. With the use of websockets we can update everything and have it live sync across multiple clients. 
 
-That's reactivity, Batman!
+That's [reactivity](http://reactivex.io/), Batman!
 
-How is the frontend JavaScript removed? [Opal](link). 
+How is the frontend JavaScript removed? [Opal](https://github.com/opal/opal). 
 
 Volt gives us a bunch of toys we normally are given in a frontend framework that lets us build fast and quick. You get automatic simple bindings inside the frontend, automatic bindings, syncing with the database, or all clients. 
 
